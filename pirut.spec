@@ -1,14 +1,14 @@
 Summary:	Package Installation, Removal and Update Tools
+Summary(pl):	Narzêdzia do instalowania, usuwania i uaktualniania pakietów
 Name:		pirut
 Version:	1.0.1
 Release:	0.1
 License:	GPL
 Group:		Applications/System
-URL:		http://fedoraproject.org
 Source0:	%{name}-%{version}.tar.gz
 # Source0-md5:	b628cc41256fa48dfb77c54085823eb6
-Requires(post):	desktop-file-utils >= 0.8
-Requires(postun):	desktop-file-utils >= 0.8
+URL:		http://fedoraproject.org/
+Requires(post,postun):	desktop-file-utils >= 0.8
 #Requires:	comps-extras
 #Requires:	python-pygtk
 Requires:	python-pygtk-glade
@@ -19,6 +19,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 pirut (pronounced "pirate") provides a set of graphical tools for
 managing software.
+
+%description -l pl
+pirut (wymawiane tak, jak angielskie s³owo "pirate") to zbiór
+graficznych narzêdzi do zarz±dzania oprogramowaniem.
 
 %prep
 %setup -q
@@ -43,7 +47,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %postun
 %{_bindir}/update-desktop-database %{_desktopdir}
-
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
