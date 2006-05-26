@@ -2,15 +2,18 @@ Summary:	Package Installation, Removal and Update Tools
 Summary(pl):	Narzêdzia do instalowania, usuwania i uaktualniania pakietów
 Name:		pirut
 Version:	1.0.1
-Release:	0.1
+Release:	0.2
 License:	GPL
 Group:		Applications/System
 Source0:	%{name}-%{version}.tar.gz
 # Source0-md5:	b628cc41256fa48dfb77c54085823eb6
 URL:		http://fedoraproject.org/
 Requires(post,postun):	desktop-file-utils >= 0.8
+Patch0:		%{name}-desktop.patch
 #Requires:	comps-extras
 #Requires:	python-pygtk
+BuildRequires:	autoconf
+BuildRequires:	automake
 Requires:	python-pygtk-glade
 Requires:	yum >= 2.5.3
 BuildArch:	noarch
@@ -26,8 +29,13 @@ graficznych narzêdzi do zarz±dzania oprogramowaniem.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure
 %{__make}
 
@@ -61,6 +69,7 @@ rm -rf $RPM_BUILD_ROOT
 /etc/pam.d/*
 /etc/security/console.apps/*
 %{_desktopdir}/*.desktop
+%{_desktopdir}/kde/*.desktop
 %dir %{_datadir}/pirut
 %dir %{_datadir}/pirut/ui
 %{_datadir}/pirut/ui/*.glade
