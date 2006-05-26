@@ -1,4 +1,4 @@
---- pirut-1.0.1/data/pirut.desktop	2006-03-01 01:56:27.000000000 +0200
+--- pirut-1.0.1/data/pirut.desktop.in	2006-03-01 01:56:27.000000000 +0200
 +++ pirut-1.0.1.desktop/data/pirut.desktop	2006-05-26 13:11:37.359189448 +0300
 @@ -2,10 +2,11 @@
  Name=Add/Remove Software
@@ -14,7 +14,7 @@
  Encoding=UTF-8
  StartupNotify=true
 +NotShowIn=KDE
---- pirut-1.0.1/data/pup.desktop	2006-03-01 01:56:28.000000000 +0200
+--- pirut-1.0.1/data/pup.desktop.in	2006-03-01 01:56:28.000000000 +0200
 +++ pirut-1.0.1.desktop/data/pup.desktop	2006-05-26 13:10:51.618166176 +0300
 @@ -2,10 +2,11 @@
  Name=Software Updater
@@ -30,7 +30,7 @@
  Encoding=UTF-8
  StartupNotify=true
 +NotShowIn=KDE
---- pirut-1.0.1/data/system-install-packages.desktop	2006-03-01 01:56:28.000000000 +0200
+--- pirut-1.0.1/data/system-install-packages.desktop.in	2006-03-01 01:56:28.000000000 +0200
 +++ pirut-1.0.1.desktop/data/system-install-packages.desktop	2006-05-26 13:09:52.186836659 +0300
 @@ -2,11 +2,12 @@
  Name=Install software
@@ -47,3 +47,74 @@
  StartupNotify=true
  NoDisplay=true
 +NotShowIn=KDE
+--- /dev/null	2006-03-28 14:00:37.387408000 +0300
++++ pirut-1.0.1/data/system-install-packages-kde.desktop.in	2006-05-26 13:15:35.454516111 +0300
+@@ -0,0 +1,14 @@
++[Desktop Entry]
++Name=Install software
++GenericName=Install software
++Comment=Install selected software on the system
++Categories=GTK;System;Application;
++Exec=/usr/bin/system-install-packages %F
++Terminal=false
++Type=Application
++Icon=installpkg.png
++Encoding=UTF-8
++StartupNotify=true
++NoDisplay=true
++X-KDE-SubstituteUID=true
++OnlyShowIn=KDE
+--- /dev/null	2006-03-28 14:00:37.387408000 +0300
++++ pirut-1.0.1/data/pup-kde.desktop.in	2006-05-26 13:15:25.994304460 +0300
+@@ -0,0 +1,13 @@
++[Desktop Entry]
++Name=Software Updater
++GenericName=Software Updater
++Comment=Update software installed on the system
++Categories=PackageManager;GNOME;GTK;System;Application;
++Exec=/usr/bin/pup
++Terminal=false
++Type=Application
++Icon=pup.png
++Encoding=UTF-8
++StartupNotify=true
++X-KDE-SubstituteUID=true
++OnlyShowIn=KDE
+--- /dev/null	2006-03-28 14:00:37.387408000 +0300
++++ pirut-1.0.1/data/pirut-kde.desktop.in	2006-05-26 13:15:16.294087439 +0300
+@@ -0,0 +1,13 @@
++[Desktop Entry]
++Name=Add/Remove Software
++GenericName=Add/Remove Software
++Comment=Change the software installed on the system
++Categories=Application;System;PackageManager;GNOME;GTK
++Exec=/usr/bin/pirut
++Terminal=false
++Type=Application
++Icon=pirut.png
++Encoding=UTF-8
++StartupNotify=true
++X-KDE-SubstituteUID=true
++OnlyShowIn=KDE
+--- pirut-1.0.1/data/Makefile.am~	2006-05-26 13:26:17.708886414 +0300
++++ pirut-1.0.1/data/Makefile.am	2006-05-26 13:26:48.129567131 +0300
+@@ -3,6 +3,10 @@
+ desktop_in_files = pirut.desktop.in pup.desktop.in system-install-packages.desktop.in
+ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+ 
++kdedesktopdir = $(datadir)/applications/kde
++kdedesktop_in_files = pirut-kde.desktop.in pup-kde.desktop.in system-install-packages-kde.desktop.in
++kdedesktop_DATA = $(kdedesktop_in_files:.desktop.in=.desktop)
++
+ GLADE_FILES = \
+ 	GroupSelector.glade \
+ 	PackageManager.glade \
+@@ -31,6 +35,8 @@
+ 	$(PIXMAPS)     \
+ 	$(desktop_in_files) \
+ 	$(desktop_DATA)  \
++	$(kdedesktop_in_files) \
++	$(kdedesktop_DATA) \
+ 	pirut.pam \
+ 	pirut.console \
+ 	pup.pam \
