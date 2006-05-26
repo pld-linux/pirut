@@ -7,7 +7,7 @@
 -Categories=Application;System;X-Red-Hat-Base;X-Fedora;PackageManager;GNOME;GTK
 -Exec=/usr/bin/pirut
 +Categories=Application;System;PackageManager;GNOME;GTK
-+Exec=gksu -u root /usr/bin/pirut
++Exec=gksu -u root /usr/sbin/pirut
  Terminal=false
  Type=Application
  Icon=pirut.png
@@ -23,7 +23,7 @@
 -Categories=Application;System;X-Red-Hat-Base;X-Fedora;PackageManager;GNOME;GTK
 -Exec=/usr/bin/pup
 +Categories=PackageManager;GNOME;GTK;System;Application;
-+Exec=gksu -u root /usr/bin/pup
++Exec=gksu -u root /usr/sbin/pup
  Terminal=false
  Type=Application
  Icon=pup.png
@@ -39,7 +39,7 @@
 -Categories=Application;System;X-Red-Hat-Base;X-Fedora
 -Exec=/usr/bin/system-install-packages %F
 +Categories=GTK;System;Application;
-+Exec=gksu -u root /usr/bin/system-install-packages %F
++Exec=gksu -u root /usr/sbin/system-install-packages %F
  Terminal=false
  Type=Application
  Icon=installpkg.png
@@ -55,7 +55,7 @@
 +GenericName=Install software
 +Comment=Install selected software on the system
 +Categories=GTK;System;Application;
-+Exec=/usr/bin/system-install-packages %F
++Exec=/usr/sbin/system-install-packages %F
 +Terminal=false
 +Type=Application
 +Icon=installpkg.png
@@ -72,7 +72,7 @@
 +GenericName=Software Updater
 +Comment=Update software installed on the system
 +Categories=PackageManager;GNOME;GTK;System;Application;
-+Exec=/usr/bin/pup
++Exec=/usr/sbin/pup
 +Terminal=false
 +Type=Application
 +Icon=pup.png
@@ -88,7 +88,7 @@
 +GenericName=Add/Remove Software
 +Comment=Change the software installed on the system
 +Categories=Application;System;PackageManager;GNOME;GTK
-+Exec=/usr/bin/pirut
++Exec=/usr/sbin/pirut
 +Terminal=false
 +Type=Application
 +Icon=pirut.png
