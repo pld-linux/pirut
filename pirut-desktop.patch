@@ -1,0 +1,49 @@
+--- pirut-1.0.1/data/pirut.desktop	2006-03-01 01:56:27.000000000 +0200
++++ pirut-1.0.1.desktop/data/pirut.desktop	2006-05-26 13:11:37.359189448 +0300
+@@ -2,10 +2,11 @@
+ Name=Add/Remove Software
+ GenericName=Add/Remove Software
+ Comment=Change the software installed on the system
+-Categories=Application;System;X-Red-Hat-Base;X-Fedora;PackageManager;GNOME;GTK
+-Exec=/usr/bin/pirut
++Categories=Application;System;PackageManager;GNOME;GTK
++Exec=gksu -u root /usr/bin/pirut
+ Terminal=false
+ Type=Application
+ Icon=pirut.png
+ Encoding=UTF-8
+ StartupNotify=true
++NotShowIn=KDE
+--- pirut-1.0.1/data/pup.desktop	2006-03-01 01:56:28.000000000 +0200
++++ pirut-1.0.1.desktop/data/pup.desktop	2006-05-26 13:10:51.618166176 +0300
+@@ -2,10 +2,11 @@
+ Name=Software Updater
+ GenericName=Software Updater
+ Comment=Update software installed on the system
+-Categories=Application;System;X-Red-Hat-Base;X-Fedora;PackageManager;GNOME;GTK
+-Exec=/usr/bin/pup
++Categories=PackageManager;GNOME;GTK;System;Application;
++Exec=gksu -u root /usr/bin/pup
+ Terminal=false
+ Type=Application
+ Icon=pup.png
+ Encoding=UTF-8
+ StartupNotify=true
++NotShowIn=KDE
+--- pirut-1.0.1/data/system-install-packages.desktop	2006-03-01 01:56:28.000000000 +0200
++++ pirut-1.0.1.desktop/data/system-install-packages.desktop	2006-05-26 13:09:52.186836659 +0300
+@@ -2,11 +2,12 @@
+ Name=Install software
+ GenericName=Install software
+ Comment=Install selected software on the system
+-Categories=Application;System;X-Red-Hat-Base;X-Fedora
+-Exec=/usr/bin/system-install-packages %F
++Categories=GTK;System;Application;
++Exec=gksu -u root /usr/bin/system-install-packages %F
+ Terminal=false
+ Type=Application
+ Icon=installpkg.png
+ Encoding=UTF-8
+ StartupNotify=true
+ NoDisplay=true
++NotShowIn=KDE
