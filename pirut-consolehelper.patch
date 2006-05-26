@@ -1,0 +1,12 @@
+--- pirut-1.0.1/data/Makefile.am~	2006-05-26 13:45:49.395124919 +0300
++++ pirut-1.0.1/data/Makefile.am	2006-05-26 13:48:45.599077546 +0300
+@@ -59,9 +59,6 @@
+ 	$(INSTALL_DATA) -D pirut.console $(DESTDIR)$(sysconfdir)/security/console.apps/pirut
+ 	$(INSTALL_DATA) -D pup.console $(DESTDIR)$(sysconfdir)/security/console.apps/pup
+ 	$(INSTALL_DATA) -D system-install-packages.console $(DESTDIR)$(sysconfdir)/security/console.apps/system-install-packages
+-	$(LN_S) /usr/bin/consolehelper $(DESTDIR)$(bindir)/pirut
+-	$(LN_S) /usr/bin/consolehelper $(DESTDIR)$(bindir)/pup
+-	$(LN_S) /usr/bin/consolehelper $(DESTDIR)$(bindir)/system-install-packages
+ 
+ 	$(INSTALL_DATA) -D pirut.png $(DESTDIR)$(datadir)/pixmaps/pirut.png
+ 	$(INSTALL_DATA) -D pup.png $(DESTDIR)$(datadir)/pixmaps/pup.png
