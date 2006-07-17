@@ -1,5 +1,5 @@
 --- pirut-1.0.1/data/pirut.desktop.in	2006-03-01 01:56:27.000000000 +0200
-+++ pirut-1.0.1.desktop/data/pirut.desktop	2006-05-26 13:11:37.359189448 +0300
++++ pirut-1.0.1.desktop/data/pirut.desktop.in	2006-05-26 13:11:37.359189448 +0300
 @@ -2,10 +2,11 @@
  Name=Add/Remove Software
  GenericName=Add/Remove Software
@@ -15,7 +15,7 @@
  StartupNotify=true
 +NotShowIn=KDE
 --- pirut-1.0.1/data/pup.desktop.in	2006-03-01 01:56:28.000000000 +0200
-+++ pirut-1.0.1.desktop/data/pup.desktop	2006-05-26 13:10:51.618166176 +0300
++++ pirut-1.0.1.desktop/data/pup.desktop.in	2006-05-26 13:10:51.618166176 +0300
 @@ -2,10 +2,11 @@
  Name=Software Updater
  GenericName=Software Updater
@@ -31,7 +31,7 @@
  StartupNotify=true
 +NotShowIn=KDE
 --- pirut-1.0.1/data/system-install-packages.desktop.in	2006-03-01 01:56:28.000000000 +0200
-+++ pirut-1.0.1.desktop/data/system-install-packages.desktop	2006-05-26 13:09:52.186836659 +0300
++++ pirut-1.0.1.desktop/data/system-install-packages.desktop.in	2006-05-26 13:09:52.186836659 +0300
 @@ -2,11 +2,12 @@
  Name=Install software
  GenericName=Install software
