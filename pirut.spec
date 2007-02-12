@@ -1,5 +1,5 @@
 Summary:	Package Installation, Removal and Update Tools
-Summary(pl):	Narzêdzia do instalowania, usuwania i uaktualniania pakietów
+Summary(pl.UTF-8):   NarzÄ™dzia do instalowania, usuwania i uaktualniania pakietÃ³w
 Name:		pirut
 Version:	1.0.1
 Release:	0.5
@@ -23,9 +23,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 pirut (pronounced "pirate") provides a set of graphical tools for
 managing software.
 
-%description -l pl
-pirut (wymawiane tak, jak angielskie s³owo "pirate") to zbiór
-graficznych narzêdzi do zarz±dzania oprogramowaniem.
+%description -l pl.UTF-8
+pirut (wymawiane tak, jak angielskie sÅ‚owo "pirate") to zbiÃ³r
+graficznych narzÄ™dzi do zarzÄ…dzania oprogramowaniem.
 
 %prep
 %setup -q
