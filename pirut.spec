@@ -1,5 +1,5 @@
 Summary:	Package Installation, Removal and Update Tools
-Summary(pl.UTF-8):   Narzędzia do instalowania, usuwania i uaktualniania pakietów
+Summary(pl.UTF-8):	Narzędzia do instalowania, usuwania i uaktualniania pakietów
 Name:		pirut
 Version:	1.0.1
 Release:	0.5
