@@ -5,9 +5,10 @@ Version:	1.0.1
 Release:	0.5
 License:	GPL
 Group:		Applications/System
+# https://fedorahosted.org/releases/p/i/pirut/ (not yet)
 Source0:	%{name}-%{version}.tar.gz
 # Source0-md5:	b628cc41256fa48dfb77c54085823eb6
-URL:		http://fedoraproject.org/
+URL:		https://fedoraproject.org/wiki/Pirut
 Requires(post,postun):	desktop-file-utils >= 0.8
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-consolehelper.patch
