@@ -13,9 +13,10 @@ Patch1:		%{name}-consolehelper.patch
 BuildRequires:	gettext
 BuildRequires:	intltool
 BuildRequires:	python
-Requires(post):	desktop-file-utils >= 0.8
-Requires(postun):	desktop-file-utils >= 0.8
+Requires(post,postun):	desktop-file-utils >= 0.8
 Requires:	comps-extras
+Requires:	desktop-file-utils
+Requires:	gtk-update-icon-cache
 Requires:	python-dbus
 Requires:	python-gnome-gconf
 Requires:	python-iniparse
@@ -24,6 +25,7 @@ Requires:	python-pygtk-glade
 Requires:	python-pygtk-gtk >= 2.9.2
 Requires:	python-pynotify
 Requires:	rhpl
+Requires:	shared-mime-info
 Requires:	usermode
 Requires:	yum >= 3.2.5-2
 Obsoletes:	pup
@@ -66,14 +68,17 @@ rm -rf $RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 
 %post
-%{_bindir}/update-desktop-database %{_desktopdir}
+%update_desktop_database
+%update_mime_database
 
 %postun
-%{_bindir}/update-desktop-database %{_desktopdir}
+%update_desktop_database
+%update_mime_database
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc README NEWS AUTHORS
+/etc/xdg/autostart/puplet.desktop
 /etc/pam.d/*
 /etc/security/console.apps/*
 %attr(755,root,root) %{_sbindir}/pirut
@@ -81,6 +86,15 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_sbindir}/system-install-packages
 %{py_sitescriptdir}/pirut
 %{_datadir}/pirut
-%{_desktopdir}/*.desktop
-%{_desktopdir}/kde/*.desktop
-%{_pixmapsdir}/*png
+%{_desktopdir}/pirut.desktop
+%{_desktopdir}/pup.desktop
+%{_desktopdir}/system-install-packages.desktop
+%attr(755,root,root) %{_bindir}/getproxy
+%attr(755,root,root) %{_bindir}/puplet
+%attr(755,root,root) %{_sbindir}/system-cdinstall-helper
+%attr(755,root,root) %{_sbindir}/system-config-packages
+%{_mandir}/man8/pirut.8*
+%{_mandir}/man8/pup.8*
+%{_mandir}/man8/puplet.8*
+%{_mandir}/man8/system-cdinstall-helper.8*
+%{_mandir}/man8/system-install-packages.8*
