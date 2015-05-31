@@ -61,6 +61,10 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# not using "consolehelper"
+%{__rm} -r $RPM_BUILD_ROOT/etc/pam.d
+%{__rm} -r $RPM_BUILD_ROOT/etc/security/console.apps
+
 %find_lang %{name}
 %py_postclean
 
@@ -79,8 +83,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README NEWS AUTHORS
 /etc/xdg/autostart/puplet.desktop
-/etc/pam.d/*
-/etc/security/console.apps/*
 %attr(755,root,root) %{_sbindir}/pirut
 %attr(755,root,root) %{_sbindir}/pup
 %attr(755,root,root) %{_sbindir}/system-install-packages
